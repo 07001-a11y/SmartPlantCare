@@ -1,6 +1,6 @@
 # Smart Plant Care berbasis ESP32
 
-Sistem IoT penyiram tanaman otomatis menggunakan ESP32. Sistem membaca kelembapan tanah, kondisi hujan, serta suhu dan kelembapan udara, lalu menggerakkan servo (katup penyiram) secara otomatis dan mengirim data ke ThingSpeak lewat WiFi.
+Sistem IoT penyiram tanaman otomatis menggunakan ESP32. Sistem membaca kelembaban tanah, kondisi hujan, serta suhu dan kelembaban udara, lalu menggerakkan servo (katup penyiram) secara otomatis dan mengirim data ke ThingSpeak lewat WiFi.
 
 ## 1. Deskripsi Singkat
 
@@ -13,7 +13,7 @@ Tanaman sering layu karena lupa disiram, atau justru tergenang saat hujan. Proje
 | ESP32 | Mikrokontroler utama: membaca sensor, menjalankan logika, mengontrol servo, dan terhubung ke WiFi untuk mengirim data ke cloud |
 | Sensor kelembapan tanah | Mengukur kadar air tanah (output analog), dikonversi menjadi persen |
 | Sensor hujan | Mendeteksi adanya air/hujan pada permukaan sensor, dipakai untuk mencegah penyiraman saat hujan |
-| DHT22 | Mengukur suhu dan kelembapan udara sebagai data pendukung monitoring |
+| DHT22 | Mengukur suhu dan kelembaban udara sebagai data pendukung monitoring |
 | Servo | Aktuator yang membuka/menutup katup penyiram |
 
 ## 3. Skema Pin

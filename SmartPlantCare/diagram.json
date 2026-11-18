@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "author": "Smart Plant Care",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "soil", "top": -20.5, "left": -173, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "rain", "top": 113.9, "left": -173, "attrs": {} },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -162.9,
+      "left": 13.8,
+      "attrs": { "humidity": "66", "temperature": "22.5" }
+    },
+    { "type": "wokwi-servo", "id": "servo1", "top": 55.6, "left": 144, "attrs": {} },
+    {
+      "type": "wokwi-text",
+      "id": "text1",
+      "top": -48,
+      "left": -182.4,
+      "attrs": { "text": "Soil Moisture" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text2",
+      "top": 201.6,
+      "left": -182.4,
+      "attrs": { "text": "Sensor Hujan" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text3",
+      "top": -105.6,
+      "left": 76.8,
+      "attrs": { "text": "Sensor Suhu" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text4",
+      "top": 144,
+      "left": 211.2,
+      "attrs": { "text": "Servo" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "soil:VCC", "esp:3V3", "red", [ "v9.6", "h95.2", "v-28.8" ] ],
+    [ "soil:GND", "esp:GND.1", "black", [ "v38.4", "h105.6", "v67.2" ] ],
+    [ "soil:SIG", "esp:34", "green", [ "v19.2", "h138.61" ] ],
+    [ "rain:VCC", "esp:3V3", "red", [ "h95.2", "v-153.6" ] ],
+    [ "rain:GND", "esp:GND.1", "black", [ "v19.2", "h105.6", "v-48" ] ],
+    [ "rain:SIG", "esp:35", "blue", [ "v9.6", "h114.8", "v-115.2" ] ],
+    [ "dht1:VCC", "esp:3V3", "red", [ "v9.6", "h-57.6", "v67.2" ] ],
+    [ "dht1:GND", "esp:GND.2", "black", [ "v9.6", "h43.16" ] ],
+    [ "dht1:SDA", "esp:4", "orange", [ "v19.2", "h86.5", "v172.8" ] ],
+    [ "servo1:V+", "esp:5V", "red", [ "h-5.6", "v110.9", "h-129.79" ] ],
+    [ "servo1:GND", "esp:GND.3", "black", [ "h-5.6", "v-23.6" ] ],
+    [ "servo1:PWM", "esp:18", "purple", [ "h-28.8", "v-19" ] ]
+  ],
+  "dependencies": {}
+}
